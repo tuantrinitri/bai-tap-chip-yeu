@@ -15,6 +15,10 @@ import { EventComponent } from './home/event/event.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { TestimonialComponent } from './home/testimonial/testimonial.component';
 import { MapComponent } from './home/map/map.component';
+import { ContactComponent } from './contact/contact/contact.component';
+import { FoodComponent } from './food/food/food.component';
+import { LocationComponent } from './location/location/location.component';
+import { ExperienceComponent } from './experience/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { MapComponent } from './home/map/map.component';
     GalleryComponent,
     TestimonialComponent,
     MapComponent,
+    ContactComponent,
+    FoodComponent,
+    LocationComponent,
+    ExperienceComponent,
 
   ],
   imports: [

@@ -50,6 +50,10 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Phan style danh cho bai viet -->
+  <link href="assets/css/csspost/style.css" rel="stylesheet">
+  <link id="color-scheme" href="assets/css/csspost/default.css" rel="stylesheet">
+  <link href="assets/css/csspost/default.css" rel="stylesheet">
 </head>
 
 <body>
@@ -64,41 +68,5 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-<script>
-  // A $( document ).ready() block.
-  $(document).ready(function () {
-    /* ---------------------------------------------- /*
-             * Youtube video background
-             /* ---------------------------------------------- */
-
-    $(function () {
-      $(".video-player").mb_YTPlayer();
-    });
-
-    $('#video-play').click(function (event) {
-      event.preventDefault();
-      if ($(this).hasClass('fa-play')) {
-        $('.video-player').playYTP();
-      } else {
-        $('.video-player').pauseYTP();
-      }
-      $(this).toggleClass('fa-play fa-pause');
-      return false;
-    });
-
-    $('#video-volume').click(function (event) {
-      event.preventDefault();
-      if ($(this).hasClass('fa-volume-off')) {
-        $('.video-player').YTPUnmute();
-      } else {
-        $('.video-player').YTPMute();
-      }
-      $(this).toggleClass('fa-volume-off fa-volume-up');
-      return false;
-    });
-
-  });
-
-</script>
 
 </html>

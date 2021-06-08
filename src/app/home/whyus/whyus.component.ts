@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-whyus',
-  templateUrl: './whyus.component.html',
-  styleUrls: ['./whyus.component.css']
+  templateUrl: './whyus.component.html'
 })
 export class WhyusComponent implements OnInit {
 

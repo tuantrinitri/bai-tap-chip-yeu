@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
     {
       id: 5,
       name: "Travel Map",
-      path: "travel-map",
+      path: "map",
 
     },
     {
