@@ -18,7 +18,9 @@ import { MapComponent } from './home/map/map.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { FoodComponent } from './food/food/food.component';
 import { LocationComponent } from './location/location/location.component';
-import { ExperienceComponent } from './experience/experience/experience.component';
+// import { ExperienceComponent } from './experience/experience/experience.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +41,13 @@ import { ExperienceComponent } from './experience/experience/experience.componen
     FoodComponent,
     LocationComponent,
     ExperienceComponent,
+    // ExperienceComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]

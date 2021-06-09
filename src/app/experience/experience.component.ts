@@ -1,3 +1,4 @@
+import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
+  articles: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private apiService: ApiService) { }
+  ngOnInit() {
+    this.apiService.getNews().subscribe((data) => {
+      console.log(data);
+      this.articles = data;
+    })
   }
-
 }

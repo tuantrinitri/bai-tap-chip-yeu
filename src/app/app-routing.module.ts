@@ -1,8 +1,8 @@
+import { ExperienceComponent } from './experience/experience.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact/contact.component';
-import { ExperienceComponent } from './experience/experience/experience.component';
 import { LocationComponent } from './location/location/location.component';
 import { FoodComponent } from './food/food/food.component';
 import { MapComponent } from './home/map/map.component';
