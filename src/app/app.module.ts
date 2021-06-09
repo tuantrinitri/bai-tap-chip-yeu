@@ -18,7 +18,7 @@ import { MapComponent } from './home/map/map.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { FoodComponent } from './food/food/food.component';
 import { LocationComponent } from './location/location/location.component';
-// import { ExperienceComponent } from './experience/experience/experience.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './experience/experience.component';
 
@@ -43,11 +43,13 @@ import { ExperienceComponent } from './experience/experience.component';
     ExperienceComponent,
     // ExperienceComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
