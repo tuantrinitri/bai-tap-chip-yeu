@@ -1,0 +1,10 @@
+- ## Bắt đầu
+    - [Tổng quan](/{{route}}/{{version}}/overview)
+    - [Cài đặt](/{{route}}/{{version}}/install)
+    - [Cấu trúc chung](/{{route}}/{{version}}/construct)
+    - [Các lưu ý](/{{route}}/{{version}}/notes)
+- ## Phát triển MODULE
+    - [Tổng quan](/{{route}}/{{version}}/module/overview)
+    - [Cấu trúc module](/{{route}}/{{version}}/module/construct)
+    - [info.json](/{{route}}/{{version}}/module/info_json)
+    - [Cấu hình](/{{route}}/{{version}}/module/config)

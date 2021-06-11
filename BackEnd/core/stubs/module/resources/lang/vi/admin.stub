@@ -1,0 +1,6 @@
+<?php
+
+return [
+    '{module}_management' => 'Quản lý {module}',
+    'list_{module}' => 'Danh sách {module}',
+];

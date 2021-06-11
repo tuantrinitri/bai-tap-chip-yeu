@@ -1,0 +1,10 @@
+{
+    "name": "post",
+    "title": "Post",
+    "description": "This is description for module post",
+    "namespace": "Modules\\Post\\",
+    "provider": "Modules\\Post\\Providers\\PostServiceProvider",
+    "author": "MITECH",
+    "url": "https://mitechcenter.vn",
+    "version": "1.0.0"
+}

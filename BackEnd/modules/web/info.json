@@ -1,0 +1,10 @@
+{
+    "name": "web",
+    "title": "Web",
+    "description": "This is description for module web",
+    "namespace": "Modules\\Web\\",
+    "provider": "Modules\\Web\\Providers\\WebServiceProvider",
+    "author": "MITECH",
+    "url": "https://mitechcenter.vn",
+    "version": "1.0.0"
+}

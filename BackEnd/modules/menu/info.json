@@ -1,0 +1,10 @@
+{
+    "name": "menu",
+    "title": "Menu",
+    "description": "Đây là module menu",
+    "namespace": "Modules\\Menu\\",
+    "provider": "Modules\\Menu\\Providers\\MenuServiceProvider",
+    "author": "Trần Quang Tuấn",
+    "url": "https://mitechcenter.vn",
+    "version": "1.0.0"
+}

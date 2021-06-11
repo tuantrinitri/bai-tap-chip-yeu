@@ -1,0 +1,27 @@
+<?php
+
+namespace Modules\{Module}\Http\Controllers;
+
+use Core\Supports\Controllers\BaseController;
+use Modules\{Module}\Repositories\Interfaces\{Module}Interface;
+
+class {Module}Controller extends BaseController
+{
+    /**
+     * {Module}Controller Constructor
+     *
+     * @param {Module}Interface ${module}Repository
+     */
+    function __construct(
+        {Module}Interface ${module}Repository
+    ) {
+        $this->{module}Repository = ${module}Repository;
+    }
+
+    public function getList()
+    {
+        page_title()->setTitle(trans('{module}::admin.list_{module}'));
+        ${modules} = $this->{module}Repository->orderBy('id', 'desc')->paginate(20);
+        return view('{module}::admin.{module}.list', compact('{modules}'));
+    }
+}

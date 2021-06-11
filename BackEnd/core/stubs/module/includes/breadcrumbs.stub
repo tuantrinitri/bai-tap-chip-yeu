@@ -1,0 +1,6 @@
+<?php
+
+Breadcrumbs::for('{module}.admin.list', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('{module}::admin.{module}_management'), route('{module}.admin.list'));
+});

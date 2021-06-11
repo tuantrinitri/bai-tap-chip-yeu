@@ -1,0 +1,6 @@
+<?php
+
+return [
+    '{module}_management' => '{Module} management',
+    'list_{module}' => 'List {module}',
+];

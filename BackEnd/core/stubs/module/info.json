@@ -1,0 +1,10 @@
+{
+    "name": "{module}",
+    "title": "{Module}",
+    "description": "This is description for module {module}",
+    "namespace": "Modules\\{Module}\\",
+    "provider": "Modules\\{Module}\\Providers\\{Module}ServiceProvider",
+    "author": "MITECH",
+    "url": "https://mitechcenter.vn",
+    "version": "1.0.0"
+}

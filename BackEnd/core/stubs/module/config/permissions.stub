@@ -1,0 +1,24 @@
+<?php
+
+return [
+    [
+        'name' => '{module}.admin.list',
+        'title' => '{module}::common.permission.list_{module}',
+        'description' => '{module}::common.permission.list_{module}_description',
+    ],
+    [
+        'name' => '{module}.admin.create',
+        'title' => '{module}::common.permission.create_{module}',
+        'description' => '{module}::common.permission.create_{module}_description',
+    ],
+    [
+        'name' => '{module}.admin.edit',
+        'title' => '{module}::common.permission.edit_{module}',
+        'description' => '{module}::common.permission.edit_user_description',
+    ],
+    [
+        'name' => '{module}.admin.delete',
+        'title' => '{module}::common.permission.delete_{module}',
+        'description' => '{module}::common.permission.delete_{module}_description',
+    ],
+];

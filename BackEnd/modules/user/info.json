@@ -1,0 +1,10 @@
+{
+    "name": "user",
+    "title": "User",
+    "description": "Manager users for system",
+    "namespace": "Modules\\User\\",
+    "provider": "Modules\\User\\Providers\\UserServiceProvider",
+    "author": "Quoc Dat IT",
+    "url": "https://quocdatit.com",
+    "version": "1.0.0"
+}

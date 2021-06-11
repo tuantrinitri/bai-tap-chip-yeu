@@ -1,0 +1,33 @@
+<?php
+
+Route::group(['namespace' => '\Modules\{Module}\Http\Controllers', 'middleware' => 'web'], function () {
+    /**
+     * ROUTES FOR ADMIN: {Module}
+     */
+    Route::group(['middleware' => ['auth'], 'prefix' => config('cms.admin_prefix') . '/{modules}'], function () {
+        Route::get('/', [
+            'as' => '{module}.admin.list',
+            'uses' => '{Module}Controller@getList'
+        ]);
+        Route::get('create', [
+            'as' => '{module}.admin.create',
+            'uses' => '{Module}Controller@getCreate'
+        ]);
+        Route::post('create', [
+            'as' => '{module}.admin.create',
+            'uses' => '{Module}Controller@postCreate'
+        ]);
+        Route::get('edit/{id}', [
+            'as' => '{module}.admin.edit',
+            'uses' => '{Module}Controller@getEdit'
+        ]);
+        Route::post('edit/{id}', [
+            'as' => '{module}.admin.edit',
+            'uses' => '{Module}Controller@postEdit'
+        ]);
+        Route::get('delete/{id}', [
+            'as' => '{module}.admin.delete',
+            'uses' => '{Module}Controller@getDelete'
+        ]);
+    });
+});

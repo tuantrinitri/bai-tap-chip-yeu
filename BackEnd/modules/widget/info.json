@@ -1,0 +1,10 @@
+{
+    "name": "widget",
+    "title": "Widget",
+    "description": "Đây là module Widget",
+    "namespace": "Modules\\Widget\\",
+    "provider": "Modules\\Widget\\Providers\\WidgetServiceProvider",
+    "author": "Trần Quốc Tuấn",
+    "url": "https://mitechcenter.vn",
+    "version": "1.0.0"
+}
