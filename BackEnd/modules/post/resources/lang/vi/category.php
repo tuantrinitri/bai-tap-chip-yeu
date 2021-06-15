@@ -29,6 +29,5 @@ return [
     'edit_button' => 'Sửa',
     'order' => 'Thứ tự',
     'action' => 'Thao tác',
-    'category_setting' => 'Quản lý danh mục',
-    'locale' => 'Ngôn ngữ'
+    'category_setting' => 'Quản lý danh mục'
 ];

@@ -34,6 +34,5 @@ return [
     'cancel' => 'Hủy',
     'save' => 'Lưu',
     'edit' => 'Sửa',
-    'delete' => 'Xóa',
-
+    'delete' => 'Xóa'
 ];

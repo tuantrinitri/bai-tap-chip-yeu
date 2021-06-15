@@ -161,16 +161,14 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
         /*
          * Package Service Providers...
          */
-        Laravel\Socialite\SocialiteServiceProvider::class,
-        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
         TorMorten\Eventy\EventServiceProvider::class,
         TorMorten\Eventy\EventBladeServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        Botble\GitCommitChecker\Providers\GitCommitCheckerServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -244,10 +242,9 @@ return [
         'DashboardMenu' => Core\Facades\DashboardMenuFacade::class,
         'PageTtitle' => Core\Facades\PageTtitleFacade::class,
         'Setting' => Core\Facades\SettingFacade::class,
-        'SeoHelper'    => Arcanedev\SeoHelper\Facades\SeoHelper::class,
-        'SeoMeta'      => Arcanedev\SeoHelper\Facades\SeoMeta::class,
-        'SeoOpenGraph' => Arcanedev\SeoHelper\Facades\SeoOpenGraph::class,
-        'SeoTwitter'   => Arcanedev\SeoHelper\Facades\SeoTwitter::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+
+
     ],
 
 ];

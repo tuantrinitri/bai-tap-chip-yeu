@@ -4,7 +4,7 @@
     "description": "This is description for module {module}",
     "namespace": "Modules\\{Module}\\",
     "provider": "Modules\\{Module}\\Providers\\{Module}ServiceProvider",
-    "author": "MITECH",
-    "url": "https://mitechcenter.vn",
+    "author": "NTGroup",
+    "url": "https://fb.com/quoctuanit.282",
     "version": "1.0.0"
 }

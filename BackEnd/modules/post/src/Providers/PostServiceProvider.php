@@ -2,33 +2,27 @@
 
 namespace Modules\Post\Providers;
 
-use Event;
-use Illuminate\Routing\Events\RouteMatched;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
+use File;
+use Illuminate\Routing\Events\RouteMatched;
+use Illuminate\Support\Facades\Event;
 use Modules\Post\Repositories\Eloquents\CategoryRepository;
-use Modules\Post\Repositories\Eloquents\CategoryTranslationRepository;
 use Modules\Post\Repositories\Eloquents\PostRepository;
-use Modules\Post\Repositories\Eloquents\PostTranlastionRepository;
 use Modules\Post\Repositories\Interfaces\CategoryInterface;
-use Modules\Post\Repositories\Interfaces\CategoryTranslationInterface;
 use Modules\Post\Repositories\Interfaces\PostInterface;
-use Modules\Post\Repositories\Interfaces\PostTranlastionInterface;
 
 class PostServiceProvider extends ServiceProvider
 {
     public function register()
     {
         $this->app->bind(PostInterface::class, PostRepository::class);
-        $this->app->bind(PostTranlastionInterface::class, PostTranlastionRepository::class);
         $this->app->bind(CategoryInterface::class, CategoryRepository::class);
-        $this->app->bind(CategoryTranslationInterface::class, CategoryTranslationRepository::class);
     }
 
+    // chay khi load trang
     public function boot()
     {
         $module = 'post';
-        $namespace = 'Modules\\Post\\';
         $module_path = base_path('modules' . DIRECTORY_SEPARATOR . 'post');
 
         /**
@@ -82,19 +76,8 @@ class PostServiceProvider extends ServiceProvider
             $this->loadViewsFrom($module_path . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'views', $module);
         }
 
-        // $this->app->register(HookServiceProvider::class);
-
-        /**
-         * Load admin menu
-         */
+        // load admin menu
         $this->loadAdminMenu();
-
-        /**
-         * Load widgets, shortcodes,...
-         */
-        widget:
-        app('arrilot.widget-namespaces')->registerNamespace(ucfirst($module), '\Modules\\' . ucfirst($module) . '\Widgets');
-        // shortcodes: Shortcode::register('product', ProductShortcode::class);
     }
 
     public function loadAdminMenu()
@@ -116,8 +99,8 @@ class PostServiceProvider extends ServiceProvider
                     'parent_id'   => 'mod-post',
                     'name'        => 'post::category.category_setting',
                     'icon'        => null,
-                    'url'         => route('category.admin.index'),
-                    'permissions' => ['post.admin.index'],
+                    'url'         => route('category.admin.list'),
+                    'permissions' => [],
                 ])
                 ->registerItem([
                     'id'          => 'mod-post-list',
@@ -126,7 +109,7 @@ class PostServiceProvider extends ServiceProvider
                     'name'        => 'post::post.posts',
                     'icon'        => null,
                     'url'         => route('post.admin.index'),
-                    'permissions' => ['post.admin.index'],
+                    'permissions' => [],
                 ])
                 ->registerItem([
                     'id'          => 'mod-post-add',
@@ -135,7 +118,7 @@ class PostServiceProvider extends ServiceProvider
                     'name'        => 'post::post.add_post',
                     'icon'        => null,
                     'url'         => route('post.admin.create'),
-                    'permissions' => ['post.admin.create'],
+                    'permissions' => [],
                 ]);
         });
     }

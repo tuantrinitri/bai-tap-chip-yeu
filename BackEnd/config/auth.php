@@ -40,10 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
+        'apiaccount' => [
+            'driver' => 'jwt',
+            'provider' => 'accounts',
+            // 'hash' => false,
         ],
     ],
 
@@ -70,10 +70,10 @@ return [
             'model' => Modules\User\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'accounts' => [
+            'driver' => 'eloquent',
+            'model' => Modules\Account\Models\Account::class,
+        ],
     ],
 
     /*

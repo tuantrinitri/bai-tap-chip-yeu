@@ -20,6 +20,7 @@ class DashboardController extends BaseController
         }
         return redirect()->back();
     }
+
     public function slug()
     {
         return response()->json(str_slug(request()->plainText));

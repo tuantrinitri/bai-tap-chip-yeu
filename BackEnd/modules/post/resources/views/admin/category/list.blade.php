@@ -5,7 +5,8 @@
 @section('page_content')
 <div class="page-header-content header-elements-md-inline">
     <div class="page-title d-flex">
-        <h4><i class="far fa-newspaper mr-2"></i> <span class="font-weight-semibold">{{ trans('post::post.name') }}</span> - {{ trans('post::category.name') }}
+        <h4><i class="far fa-newspaper mr-2"></i> <span
+                class="font-weight-semibold">{{ trans('post::post.name') }}</span> - {{ trans('post::category.name') }}
         </h4>
         <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
     </div>
@@ -23,15 +24,7 @@
 @endsection
 @section('custom_js')
 <script>
-    function askToDeletePage(element) {
-        if (confirm('{{ trans("page::admin.asktodel") }}')) {
-            window.location.href = $(element).data("href");
-        }
-        return false;
-    }
-</script>
-<script>
-    function get_slug(elTitle, elSlug) {
+   function get_slug(elTitle, elSlug) {
     $.ajax({
         type: "post",
         url: "{{ route('get-slug') }}",

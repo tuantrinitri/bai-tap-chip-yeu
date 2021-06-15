@@ -69,7 +69,7 @@
         <div class="col-12 col-md-8 login-left bg-login">
             <div class="bottom">
                 <h1><strong>{{ setting('site_name', config('cms.site_name')) }}</strong></h1>
-                <p class="mt-2">{{ trans('core::common.powered_by') }} <a href="https://mitechcenter.vn" target="_blank" class="text-white"><strong>MITECH</strong></a>. {{ trans('core::common.version') }}: {{ config('cms.version') }}</p>
+                <p class="mt-2">{{ trans('core::common.powered_by') }} <a href="#" target="_blank" class="text-white"><strong>Huyền-Chip</strong></a>. {{ trans('core::common.version') }}: {{ config('cms.version') }}</p>
 
             </div>
         </div>
@@ -80,7 +80,7 @@
                 <div class="text-center mb-3">
                     <figure>
                         <a href="{{ route('index') }}">
-                            <img class="img-logo" src="{{ asset('upload/default/Logo.png') }}" alt="Logo AdminCP">
+                            <img class="img-logo" src="{{ asset(setting('site_logo')) }}" alt="Logo AdminCP">
                         </a>
                     </figure>
                 </div>

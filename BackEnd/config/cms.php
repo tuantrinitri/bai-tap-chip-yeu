@@ -1,18 +1,12 @@
 <?php
 
 return [
-    'site_name' => 'Trang tin điện tử, Hiệp hội cá ngừ Việt Nam',
+    'site_name' => 'GDST',
     'admin_prefix' => 'admincp',
-    'version' => '1.2.0',
+    'version' => '4.0',
     'system_modules' => [
         'web',
         'user',
-        // 'widget',
-        // 'menu',
-        // 'page',
-        'post',
-        // 'link',
-        'banner'
     ],
     'system_roles' => [
         'superadmin' => [

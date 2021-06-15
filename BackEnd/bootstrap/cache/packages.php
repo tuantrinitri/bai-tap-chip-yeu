@@ -6,13 +6,6 @@
       0 => 'Alexusmai\\LaravelFileManager\\FileManagerServiceProvider',
     ),
   ),
-  'arcanedev/seo-helper' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Arcanedev\\SeoHelper\\SeoHelperServiceProvider',
-    ),
-  ),
   'arrilot/laravel-widgets' => 
   array (
     'providers' => 
@@ -32,6 +25,13 @@
       0 => 'Astrotomic\\Translatable\\TranslatableServiceProvider',
     ),
   ),
+  'barryvdh/laravel-cors' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Cors\\ServiceProvider',
+    ),
+  ),
   'binarytorch/larecipe' => 
   array (
     'providers' => 
@@ -41,24 +41,6 @@
     'aliases' => 
     array (
       'LaRecipe' => 'BinaryTorch\\LaRecipe\\LaRecipe',
-    ),
-  ),
-  'botble/git-commit-checker' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Botble\\GitCommitChecker\\Providers\\GitCommitCheckerServiceProvider',
-    ),
-  ),
-  'darryldecode/cart' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Darryldecode\\Cart\\CartServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Cart' => 'Darryldecode\\Cart\\Facades\\CartFacade',
     ),
   ),
   'davejamesmiller/laravel-breadcrumbs' => 
@@ -88,17 +70,6 @@
     'aliases' => 
     array (
       'Image' => 'Intervention\\Image\\Facades\\Image',
-    ),
-  ),
-  'jenssegers/agent' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Agent' => 'Jenssegers\\Agent\\Facades\\Agent',
     ),
   ),
   'laravel/socialite' => 
@@ -156,22 +127,22 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
-  'pragmarx/tracker' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'PragmaRX\\Tracker\\Vendor\\Laravel\\ServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Tracker' => 'PragmaRX\\Tracker\\Vendor\\Laravel\\Facade',
-    ),
-  ),
   'prettus/l5-repository' => 
   array (
     'providers' => 
     array (
       0 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
+    ),
+  ),
+  'simplesoftwareio/simple-qrcode' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'QrCode' => 'SimpleSoftwareIO\\QrCode\\Facades\\QrCode',
     ),
   ),
   'spatie/laravel-activitylog' => 
@@ -207,15 +178,16 @@
       'Eventy' => 'TorMorten\\Eventy\\Facades\\Events',
     ),
   ),
-  'webwizo/laravel-shortcodes' => 
+  'tymon/jwt-auth' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Webwizo\\Shortcodes\\ShortcodesServiceProvider',
-    ),
     'aliases' => 
     array (
-      'Shortcode' => 'Webwizo\\Shortcodes\\Facades\\Shortcode',
+      'JWTAuth' => 'Tymon\\JWTAuth\\Facades\\JWTAuth',
+      'JWTFactory' => 'Tymon\\JWTAuth\\Facades\\JWTFactory',
+    ),
+    'providers' => 
+    array (
+      0 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     ),
   ),
   'yajra/laravel-datatables-buttons' => 

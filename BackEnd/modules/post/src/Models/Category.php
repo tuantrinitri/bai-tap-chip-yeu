@@ -2,35 +2,41 @@
 
 namespace Modules\Post\Models;
 
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model implements TranslatableContract
+class Category extends Model
 {
-    use Translatable;
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
     protected $table = 'post_categories';
-    public $translatedAttributes = ['title'];
+
     /**
      * @var array
      */
     protected $fillable = [
-        'id',
         'order',
+        'lang',
         'parent_id',
+        'title',
+        'slug',
+        'description',
         'image',
         'featured',
-        'slug',
+        'seo_title',
+        'seo_image',
+        'seo_keywords',
+        'seo_description',
         'status'
     ];
-    public function categoryTranstion()
-    {
-        return $this->hasMany(CategoryTranslation::class);
-    }
+
     public function posts()
     {
-        return $this->hasMany(Post::class, 'category_id')->where('status', 1)->paginate(20);
+        return $this->hasMany(Post::class, 'category_id');
     }
+
     public function children()
     {
         return $this->hasMany(Category::class, 'parent_id');
@@ -40,4 +46,9 @@ class Category extends Model implements TranslatableContract
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
+
+    // public function menu_rights()
+    // {
+    //     return $this->morphOne(MenuRight::class, 'menuable');
+    // }
 }

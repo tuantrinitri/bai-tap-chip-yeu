@@ -210,45 +210,4 @@
     });
 }
 </script>
-<script>
-    $(document).ready(function() {
-    var lang = $('input[name="locale"]:checked').val();
-    if (lang) {
-        $.ajax({
-            type: 'post',
-            url: "{{ route('post.ajax.langue') }}",
-            data: {
-                _token: _token,
-                lang: lang
-            },
-            dataType: 'JSON',
-            success: function(data) {
-                $.each(data['data'], function(i, item) {
-                    var result = "<option value='" + item.id + "'>" + item.title + "</option>";
-                    $('#category-show').append(result);
-                });
-            }
-        });
-    }
-    $('input[type="radio"]').change(function(el) {
-        $('select').children('option:not(:first)').remove();
-        var lang = $(this).val();
-        $.ajax({
-            type: 'post',
-            url: "{{ route('post.ajax.langue') }}",
-            data: {
-                _token: _token,
-                lang: lang
-            },
-            dataType: 'JSON',
-            success: function(data) {
-                $.each(data['data'], function(i, item) {
-                    var result = "<option value='" + item.id + "'>" + item.title + "</option>";
-                    $('#category-show').append(result);
-                });
-            }
-        });
-    });
-});
-</script>
 @endsection

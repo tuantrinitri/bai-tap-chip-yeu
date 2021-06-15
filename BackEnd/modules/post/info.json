@@ -1,10 +1,10 @@
 {
     "name": "post",
-    "title": "Post",
-    "description": "This is description for module post",
+    "title": "Bài viết",
+    "description": "Đây là module bài viết",
     "namespace": "Modules\\Post\\",
     "provider": "Modules\\Post\\Providers\\PostServiceProvider",
-    "author": "MITECH",
-    "url": "https://mitechcenter.vn",
+    "author": "Quoc Tuan",
+    "url": "quoctuanit.282@gmail.com",
     "version": "1.0.0"
 }

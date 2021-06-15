@@ -26,12 +26,12 @@ class CategoryRequest extends FormRequest
         if ($this->has('id')) {
             return [
                 'title' => 'required',
-                'slug' => 'required'
+                'slug' => 'required|unique:post_categories,slug,' . $this->id
             ];
         }
         return [
             'title' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:post_categories,slug',
         ];
     }
 
@@ -40,6 +40,7 @@ class CategoryRequest extends FormRequest
         return [
             'title.required' => trans('post::notification.title'),
             'slug.required' => trans('post::notification.slug'),
+            'slug.unique' => trans('post::notification.slug_unique'),
         ];
     }
 }

@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \Core\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \Core\Middleware\TrustProxies::class,
+        // \Barryvdh\Cors\HandleCors::class,
         // \Illuminate\Session\Middleware\AuthenticateSession::class,
     ];
 
@@ -35,13 +36,14 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Core\Middleware\VerifyCsrfToken::class,
             \Core\Middleware\Locale::class,
-            \PragmaRX\Tracker\Vendor\Laravel\Middlewares\Tracker::class,
+            // \PragmaRX\Tracker\Vendor\Laravel\Middlewares\Tracker::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'api' => [
-            'throttle:60,1',
-            'bindings',
+            // 'throttle:60,1',
+            // 'bindings',
+            \Barryvdh\Cors\HandleCors::class,
         ],
     ];
 
@@ -54,6 +56,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \Core\Middleware\Authenticate::class,
+        'auth.api' => \Core\Middleware\VerifyJWTToken::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

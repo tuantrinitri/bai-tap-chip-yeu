@@ -29,10 +29,15 @@ class Authenticate extends Middleware
                 if ($request->expectsJson()) {
                     return response()->json(['status' => false, 'msg' => trans('core::notification.no_permission')]);
                 }
+                // check thang nao con nao vao duoc dashboard
                 // If not had permission access to dashboard => redirect home index
                 if (!user_check_permission('dashboard')) {
-                    return redirect()->route('index');
+                    if (!user_check_permission('client')) {
+                        return redirect()->route('user.logout')->with('flash_data', ['type' => 'error', 'message' => trans('core::notification.no_permission')]);
+                    }
+                    return redirect()->route('client.index');
                 }
+
                 // redirect to dashboard
                 return redirect()->route('dashboard')->with('flash_data', ['type' => 'error', 'message' => trans('core::notification.no_permission')]);
             }

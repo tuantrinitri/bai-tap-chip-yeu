@@ -26,15 +26,16 @@ class PostRequest extends FormRequest
         if ($this->has('id')) {
             return [
                 'title' => 'required',
-                'slug' => 'required',
+                'slug' => 'required|unique:post,slug',
                 'content' => 'required',
                 'category_id' => 'required',
                 'image' => 'required',
+                'slug' => 'required|unique:posts,slug,' . $this->id
             ];
         }
         return [
             'title' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:posts,slug',
             'content' => 'required',
             'category_id' => 'required',
             'image' => 'required',
@@ -45,6 +46,7 @@ class PostRequest extends FormRequest
         return [
             'title.required' => trans('post::notification.title'),
             'slug.required' => trans('post::notification.slug'),
+            'slug.unique' => trans('post::notification.slug_unique'),
             'content.required' => trans('post::notification.content_post'),
             'category_id.required' => trans('post::notification.category_id'),
             'image.required' => trans('post::notification.image'),

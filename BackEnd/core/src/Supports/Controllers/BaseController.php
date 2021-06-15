@@ -2,7 +2,7 @@
 
 namespace Core\Supports\Controllers;
 
-use Arcanedev\SeoHelper\Traits\Seoable;
+
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -10,11 +10,11 @@ use Illuminate\Routing\Controller;
 
 class BaseController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, Seoable;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     function __construct()
     {
-        // cms_load_widget();
+
         /**
          * Check if URI contains "public"
          * Remove "public" in URI
@@ -32,8 +32,8 @@ class BaseController extends Controller
             }
         }
 
-        $this->seo()
-            ->setUrl(url()->current())
-            ->setSiteName(setting('site_name', config('cms.site_name')));
+        // $this->seo()
+        //     ->setUrl(url()->current())
+        //     ->setSiteName(setting('site_name', config('cms.site_name')));
     }
 }

@@ -1,0 +1,10 @@
+{
+    "name": "contact",
+    "title": "Contact",
+    "description": "This is description for module contact",
+    "namespace": "Modules\\Contact\\",
+    "provider": "Modules\\Contact\\Providers\\ContactServiceProvider",
+    "author": "MITECH",
+    "url": "https://mitechcenter.vn",
+    "version": "1.0.0"
+}

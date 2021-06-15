@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-lg navbar-light">
     <div class="navbar-collapse collapse" id="navbar-footer">
         <span class="navbar-text">
-            <strong>{{ trans('core::common.powered_by') }}</strong> <a href="https://mitechcenter.vn" target="_blank"><strong>MITECH</strong></a>. {{ trans('core::common.version') }} <span class="badge badge-warning">{{ config('cms.version') }}</span>
+            <strong>{{ trans('core::common.powered_by') }}</strong> <a href="https://www.facebook.com/quoctuan.282/" target="_blank"><strong>NTD Group</strong></a>. {{ trans('core::common.version') }} <span class="badge badge-warning">{{ config('cms.version') }}</span>
         </span>
 
         <div class="navbar-nav ml-lg-auto">
@@ -27,17 +27,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div id="modalInsertProduct2Content" class="modal fade" tabindex="-1">
-    <div class="modal-dialog modal-full">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">THÊM SẢN PHẨM VÀO NỘI DUNG</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body"></div>
         </div>
     </div>
 </div>

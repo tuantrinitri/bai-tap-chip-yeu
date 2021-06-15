@@ -10,4 +10,18 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
     }
+
+    // public function map()
+    // {
+    //     $this->mapApiRoutes();
+    //     //
+    // }
+
+    // protected function mapApiRoutes()
+    // {
+    //     Route::prefix('api')
+    //         ->middleware('api')
+    //         ->namespace($this->namespace)
+    //         ->group(base_path('routes/api.php'));
+    // }
 }

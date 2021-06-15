@@ -6,28 +6,28 @@ Route::group(['namespace' => '\Modules\{Module}\Http\Controllers', 'middleware' 
      */
     Route::group(['middleware' => ['auth'], 'prefix' => config('cms.admin_prefix') . '/{modules}'], function () {
         Route::get('/', [
-            'as' => '{module}.admin.list',
-            'uses' => '{Module}Controller@getList'
+            'as' => '{module}.admin.index',
+            'uses' => '{Module}Controller@index'
         ]);
         Route::get('create', [
             'as' => '{module}.admin.create',
-            'uses' => '{Module}Controller@getCreate'
+            'uses' => '{Module}Controller@create'
         ]);
         Route::post('create', [
             'as' => '{module}.admin.create',
-            'uses' => '{Module}Controller@postCreate'
+            'uses' => '{Module}Controller@store'
         ]);
         Route::get('edit/{id}', [
             'as' => '{module}.admin.edit',
-            'uses' => '{Module}Controller@getEdit'
+            'uses' => '{Module}Controller@edit'
         ]);
         Route::post('edit/{id}', [
             'as' => '{module}.admin.edit',
-            'uses' => '{Module}Controller@postEdit'
+            'uses' => '{Module}Controller@update'
         ]);
         Route::get('delete/{id}', [
             'as' => '{module}.admin.delete',
-            'uses' => '{Module}Controller@getDelete'
+            'uses' => '{Module}Controller@delete'
         ]);
     });
 });

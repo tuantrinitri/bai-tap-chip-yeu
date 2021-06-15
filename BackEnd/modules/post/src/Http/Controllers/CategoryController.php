@@ -4,10 +4,8 @@ namespace Modules\Post\Http\Controllers;
 
 use Core\Supports\Controllers\BaseController;
 use Illuminate\Http\Request;
-use League\CommonMark\HtmlRenderer;
 use Modules\Post\Http\Requests\CategoryRequest;
 use Modules\Post\Repositories\Interfaces\CategoryInterface;
-use Modules\Post\Repositories\Interfaces\CategoryTranslationInterface;
 use Modules\Post\Repositories\Interfaces\PostInterface;
 
 class CategoryController extends BaseController
@@ -16,58 +14,39 @@ class CategoryController extends BaseController
     protected $categoryRepository;
 
     function __construct(
-        CategoryInterface $categoryRepository,
-        CategoryTranslationInterface $transtionRepository
+        CategoryInterface $categoryRepository
     ) {
         $this->categoryRepository = $categoryRepository;
-        $this->transtionRepository = $transtionRepository;
     }
 
-    public function index(Request $request)
+    public function getList()
     {
-        $categories = $this->categoryRepository->with('categoryTranstion')->get();
+        $categories = $this->categoryRepository->all();
         return view('post::admin.category.list', compact('categories'));
     }
-
-    public function create(Request $request)
+    public function postAdd(CategoryRequest $request)
     {
-        $oldCategory = $request->all();
-        if (isset($oldCategory)) {
-            $data['slug'] = $this->categoryRepository->with('categoryTranstion')->find($oldCategory['category_id'])->toArray()['slug'];;
-            $data['lang'] = $oldCategory['lang'];
-            $data['category_id'] = $oldCategory['category_id'];
-            $data['categories'] = $this->categoryRepository->all();
-        }
-        return view('post::admin.category.create', $data);
+        $this->categoryRepository->createNewCategory($request);
+        return redirect()->route('category.admin.list')->with('flash_data', ['type' => 'success', 'message' => trans('post::notification.create_success')]);
     }
-
-    public function store(CategoryRequest $request)
+    public function getEdit($id)
     {
-        $this->categoryRepository->createCategory($request);
-        return redirect()->route('category.admin.index')->with('flash_data', ['type' => 'success', 'message' => trans('post::notification.create_success')]);
-    }
-
-    public function edit(Request $request, $id)
-    {
-        $data['category_edit'] = $this->categoryRepository->with('categoryTranstion')->findOrfail($id);
+        $data['category_edit'] = $this->categoryRepository->findOrfail($id);
         if ($data['category_edit']) {
-            $data['transtion'] = $this->transtionRepository->where('category_id', $id)->where('locale', $request->lang)->first();
             $data['categories'] = $this->categoryRepository->all();
             return view('post::admin.category.edit', $data);
         }
-        return redirect()->route('category.admin.index')->with('flash_data', ['type' => 'error', 'message' => 'post::notification.no_category']);
+        return redirect()->route('category.admin.list')->with('flash_data', ['type' => 'error', 'message' => 'post::notification.no_category']);
     }
-
-    public function update(CategoryRequest $request)
+    public function postEdit(CategoryRequest $request)
     {
         $this->categoryRepository->updateCategory($request);
-        return redirect()->route('category.admin.index')->with('flash_data', ['type' => 'success', 'message' => trans('post::notification.update_success')]);
+        return redirect()->route('category.admin.list')->with('flash_data', ['type' => 'success', 'message' => trans('post::notification.update_success')]);
     }
-
-    public function delete($id)
+    public function getDelete($id)
     {
         $this->categoryRepository->deleteAllCategory($id);
-        return redirect()->route('category.admin.index')->with('flash_data', ['type' => 'success', 'message' => trans('post::notification.delete_success')]);
+        return redirect()->route('category.admin.list')->with('flash_data', ['type' => 'success', 'message' => trans('post::notification.delete_success')]);
     }
     public function status(Request $request)
     {

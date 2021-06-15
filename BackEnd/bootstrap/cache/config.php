@@ -15,13 +15,13 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost:8000',
+    'url' => 'http://nhatkyktts.xyz/',
     'asset_url' => NULL,
     'timezone' => 'Asia/Ho_Chi_Minh',
     'locale' => 'vi',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:I7LdnhjHQoZO2wOnTMXOHpHYTVWbKU3pQ+E2/zgtqnQ=',
+    'key' => 'base64:JC/1Rf4tdUE6J+PEC6s/jD3kFMH7A8AQnFdCOt+ni9E=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -47,13 +47,12 @@
       19 => 'Illuminate\\Translation\\TranslationServiceProvider',
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
-      22 => 'Laravel\\Socialite\\SocialiteServiceProvider',
-      23 => 'PragmaRX\\Tracker\\Vendor\\Laravel\\ServiceProvider',
-      24 => 'TorMorten\\Eventy\\EventServiceProvider',
-      25 => 'TorMorten\\Eventy\\EventBladeServiceProvider',
-      26 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
-      27 => 'Botble\\GitCommitChecker\\Providers\\GitCommitCheckerServiceProvider',
-      28 => 'Core\\Providers\\SystemServiceProvider',
+      22 => 'TorMorten\\Eventy\\EventServiceProvider',
+      23 => 'TorMorten\\Eventy\\EventBladeServiceProvider',
+      24 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
+      25 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
+      26 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
+      27 => 'Core\\Providers\\SystemServiceProvider',
     ),
     'aliases' => 
     array (
@@ -102,10 +101,7 @@
       'DashboardMenu' => 'Core\\Facades\\DashboardMenuFacade',
       'PageTtitle' => 'Core\\Facades\\PageTtitleFacade',
       'Setting' => 'Core\\Facades\\SettingFacade',
-      'SeoHelper' => 'Arcanedev\\SeoHelper\\Facades\\SeoHelper',
-      'SeoMeta' => 'Arcanedev\\SeoHelper\\Facades\\SeoMeta',
-      'SeoOpenGraph' => 'Arcanedev\\SeoHelper\\Facades\\SeoOpenGraph',
-      'SeoTwitter' => 'Arcanedev\\SeoHelper\\Facades\\SeoTwitter',
+      'QrCode' => 'SimpleSoftwareIO\\QrCode\\Facades\\QrCode',
     ),
   ),
   'auth' => 
@@ -122,11 +118,10 @@
         'driver' => 'session',
         'provider' => 'users',
       ),
-      'api' => 
+      'apiaccount' => 
       array (
-        'driver' => 'token',
-        'provider' => 'users',
-        'hash' => false,
+        'driver' => 'jwt',
+        'provider' => 'accounts',
       ),
     ),
     'providers' => 
@@ -135,6 +130,11 @@
       array (
         'driver' => 'eloquent',
         'model' => 'Modules\\User\\Models\\User',
+      ),
+      'accounts' => 
+      array (
+        'driver' => 'eloquent',
+        'model' => 'Modules\\Account\\Models\\Account',
       ),
     ),
     'passwords' => 
@@ -158,13 +158,13 @@
         array (
           'include' => 
           array (
-            0 => '/usr/local/ampps/www/be-chip-yeu',
+            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up',
           ),
           'exclude' => 
           array (
-            0 => '/usr/local/ampps/www/be-chip-yeu/.git',
-            1 => '/usr/local/ampps/www/be-chip-yeu/vendor',
-            2 => '/usr/local/ampps/www/be-chip-yeu/node_modules',
+            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/.git',
+            1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/vendor',
+            2 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/node_modules',
           ),
           'follow_links' => false,
         ),
@@ -182,7 +182,7 @@
           0 => 'local',
         ),
       ),
-      'temporary_directory' => '/usr/local/ampps/www/be-chip-yeu/storage/app/backup-temp',
+      'temporary_directory' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/app/backup-temp',
     ),
     'notifications' => 
     array (
@@ -310,7 +310,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/usr/local/ampps/www/be-chip-yeu/storage/framework/cache/data',
+        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -353,15 +353,13 @@
   ),
   'cms' => 
   array (
-    'site_name' => 'Trang tin điện tử, Hiệp hội cá ngừ Việt Nam',
+    'site_name' => 'GDST',
     'admin_prefix' => 'admincp',
-    'version' => '1.2.0',
+    'version' => '4.0',
     'system_modules' => 
     array (
       0 => 'web',
       1 => 'user',
-      2 => 'post',
-      3 => 'banner',
     ),
     'system_roles' => 
     array (
@@ -604,19 +602,19 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/be-chip-yeu/storage/app',
+        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/app',
       ),
       'upload' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/be-chip-yeu/public/upload',
+        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/public/upload',
         'url' => '/upload',
         'visibility' => 'public',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/be-chip-yeu/storage/app/public',
+        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/app/public',
         'url' => '/storage',
         'visibility' => 'private',
       ),
@@ -636,7 +634,7 @@
     'enabled' => true,
     'psr2' => 
     array (
-      'standard' => '/usr/local/ampps/www/be-chip-yeu/config/../phpcs.xml',
+      'standard' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/config/../phpcs.xml',
       'ignored' => 
       array (
         0 => '*/database/*',
@@ -662,6 +660,41 @@
       'memory' => 8192,
       'threads' => 2,
       'time' => 2,
+    ),
+  ),
+  'jwt' => 
+  array (
+    'secret' => 'Qv1uqtSxQm4EmRxRrHFOz1ejdQGDGzohW4oDIZKWIuMigOOCQ9CtpYEQLutIThMd',
+    'keys' => 
+    array (
+      'public' => NULL,
+      'private' => NULL,
+      'passphrase' => NULL,
+    ),
+    'ttl' => NULL,
+    'refresh_ttl' => 20160,
+    'algo' => 'HS256',
+    'required_claims' => 
+    array (
+      0 => 'iss',
+      1 => 'iat',
+      2 => 'nbf',
+      3 => 'sub',
+      4 => 'jti',
+    ),
+    'persistent_claims' => 
+    array (
+    ),
+    'lock_subject' => true,
+    'leeway' => 0,
+    'blacklist_enabled' => true,
+    'blacklist_grace_period' => 0,
+    'decrypt_cookies' => false,
+    'providers' => 
+    array (
+      'jwt' => 'Tymon\\JWTAuth\\Providers\\JWT\\Lcobucci',
+      'auth' => 'Tymon\\JWTAuth\\Providers\\Auth\\Illuminate',
+      'storage' => 'Tymon\\JWTAuth\\Providers\\Storage\\Illuminate',
     ),
   ),
   'larecipe' => 
@@ -791,13 +824,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/usr/local/ampps/www/be-chip-yeu/storage/logs/laravel.log',
+        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/usr/local/ampps/www/be-chip-yeu/storage/logs/laravel.log',
+        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -861,7 +894,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/usr/local/ampps/www/be-chip-yeu/resources/views/vendor/mail',
+        0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/resources/views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -1023,9 +1056,9 @@
     ),
     'generator' => 
     array (
-      'basePath' => '/usr/local/ampps/www/be-chip-yeu/app',
+      'basePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/app',
       'rootNamespace' => 'App\\',
-      'stubsOverridePath' => '/usr/local/ampps/www/be-chip-yeu/app',
+      'stubsOverridePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/app',
       'paths' => 
       array (
         'models' => 'Entities',
@@ -1145,7 +1178,7 @@
     'lifetime' => '120',
     'expire_on_close' => true,
     'encrypt' => false,
-    'files' => '/usr/local/ampps/www/be-chip-yeu/storage/framework/sessions',
+    'files' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1190,7 +1223,7 @@
     array (
       0 => 'tracker',
     ),
-    'geoip_database_path' => '/usr/local/ampps/www/be-chip-yeu/config/geoip',
+    'geoip_database_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/config/geoip',
     'log_sql_queries_bindings' => false,
     'log_events' => false,
     'log_only_events' => 
@@ -1295,9 +1328,9 @@
   array (
     'paths' => 
     array (
-      0 => '/usr/local/ampps/www/be-chip-yeu/resources/views',
+      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/resources/views',
     ),
-    'compiled' => '/usr/local/ampps/www/be-chip-yeu/storage/framework/views',
+    'compiled' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/views',
   ),
   'widget' => 
   array (
@@ -1380,15 +1413,6 @@
     ),
     'widget_stub' => 'vendor/arrilot/laravel-widgets/src/Console/stubs/widget.stub',
     'widget_plain_stub' => 'vendor/arrilot/laravel-widgets/src/Console/stubs/widget_plain.stub',
-  ),
-  'shopping_cart' => 
-  array (
-    'format_numbers' => false,
-    'decimals' => 0,
-    'dec_point' => '.',
-    'thousands_sep' => ',',
-    'storage' => NULL,
-    'events' => NULL,
   ),
   'image' => 
   array (
@@ -1494,7 +1518,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => '/usr/local/ampps/www/be-chip-yeu/storage/framework/laravel-excel',
+      'local_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -1574,8 +1598,8 @@
     'route' => NULL,
     'paths' => 
     array (
-      0 => '/usr/local/ampps/www/be-chip-yeu/public/upload',
-      1 => '/usr/local/ampps/www/be-chip-yeu/public/images',
+      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/public/upload',
+      1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/public/images',
     ),
     'templates' => 
     array (
@@ -1605,120 +1629,14 @@
     0 => 
     array (
       'name' => 'dashboard',
-      'title' => 'Quản lý CMS',
-      'description' => 'Quản lý CMS',
-    ),
-  ),
-  'banner::permissions' => 
-  array (
-    0 => 
-    array (
-      'name' => 'banner.admin.index',
-      'title' => 'Quản lý danh sách banner',
-      'description' => 'Quản lý danh sách banner',
+      'title' => 'Quản lý admin',
+      'description' => 'Quản lý admin',
     ),
     1 => 
     array (
-      'name' => 'banner.admin.create',
-      'title' => 'Quản lý thêm banner',
-      'description' => 'Quản lý thêm banner',
-    ),
-    2 => 
-    array (
-      'name' => 'banner.admin.edit',
-      'title' => 'Quản lý chỉnh sửa banner',
-      'description' => 'Quản lý chỉnh sửa banner',
-    ),
-    3 => 
-    array (
-      'name' => 'banner.admin.delete',
-      'title' => 'Quản lý xóa banner',
-      'description' => 'Quản lý xóa banner',
-    ),
-  ),
-  'banner::widget' => 
-  array (
-    'web' => 
-    array (
-      'SlideHome' => 
-      array (
-        'name' => 'SlideHome',
-        'title' => 'Slide Trang Chủ',
-      ),
-      'TopBanner' => 
-      array (
-        'name' => 'TopBanner',
-        'title' => 'Banner 1',
-      ),
-      'BottomBanner' => 
-      array (
-        'name' => 'BottomBanner',
-        'title' => 'Banner 2',
-      ),
-    ),
-  ),
-  'menu::widget' => 
-  array (
-    'web' => 
-    array (
-      'MainMenu' => 
-      array (
-        'name' => 'MainMenu',
-        'title' => 'Menu chính',
-      ),
-    ),
-  ),
-  'post::permissions' => 
-  array (
-    0 => 
-    array (
-      'name' => 'post.admin.index',
-      'title' => 'Quản lý danh sách bài viết',
-      'description' => 'Quản lý danh sách bài viết',
-    ),
-    1 => 
-    array (
-      'name' => 'post.admin.create',
-      'title' => 'Quản lý thêm bài viết',
-      'description' => 'Quản lý thêm bài viết',
-    ),
-    2 => 
-    array (
-      'name' => 'post.admin.edit',
-      'title' => 'Quản lý sửa bài viết',
-      'description' => 'Quản lý sửa bài viết',
-    ),
-    3 => 
-    array (
-      'name' => 'post.admin.delete',
-      'title' => 'Quản lý xóa bài viết',
-      'description' => 'Quản lý xóa bài viết',
-    ),
-  ),
-  'post::widget' => 
-  array (
-    'web' => 
-    array (
-      'ListPost' => 
-      array (
-        'name' => 'ListPost',
-        'title' => 'Danh sách bài viết hiện trang chủ',
-      ),
-      'ListCategory' => 
-      array (
-        'name' => 'ListCategory',
-        'title' => 'Danh sách danh mục trang chủ',
-      ),
-      'PostMore' => 
-      array (
-        'name' => 'PostMore',
-        'title' => 'Danh sách bài viết',
-      ),
-      'SidebarRight' => 
-      array (
-        'name' => 'SidebarRight',
-        'title' => 'Menu bên phải',
-      ),
+      'name' => 'client',
+      'title' => 'Quản lý thông tin lô hàng',
+      'description' => 'Quản lý thông tin, xuất, nhập lô hàng',
     ),
   ),
   'user::layouts' => 

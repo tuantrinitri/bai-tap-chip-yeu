@@ -24,6 +24,68 @@
             <i class="icon-paragraph-justify3"></i>
         </button>
     </div>
+    @if (auth()->user()->hasRole('superadmin'))
+    @if (module_check_active('information'))
+    <div class="collapse navbar-collapse" id="navbar-mobile">
+        <ul class="navbar-nav ml-md-auto">
+            @if (auth()->user()->hasRole('superadmin'))
+            <li class="nav-item dropdown">
+                <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+                    <i class="fas fa-bible fa-2x"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
+                    <div class="dropdown-content-body p-2">
+                        <div class="row no-gutters">
+                            <div class="col-6 col-sm-4">
+                                <a href="{{ route('information.admin.location') }}" class="d-block text-default text-center ripple-dark rounded p-3">
+                                    <i class="fas fa-map-marked-alt fa-2x"></i>
+                                    <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>VỊ TRÍ</div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="{{ route('information.admin.project') }}" class="d-block text-default text-center ripple-dark rounded p-3">
+                                    <i class="fab fa-r-project fa-2x"></i>
+                                    <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>DỰ ÁN</div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="{{ route('information.admin.gear') }}" class="d-block text-default text-center ripple-dark rounded p-3">
+                                    <img class="img-thumbnail" style="height: 35px;" hrea src="{{ asset('assets/admin/images/icons/hook-iocn.png') }}" alt="">
+                                    <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>NGƯ CỤ KHAI THÁC</div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6 col-sm-4">
+                            <a href="{{ route('information.admin.species') }}" class="d-block text-default text-center ripple-dark rounded p-3">
+                                <i class="fas fa-fish fa-2x"></i>
+                                <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>LOÀI KHAI THÁC</div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <a href="{{ route('information.admin.product') }}" class="d-block text-default text-center ripple-dark rounded p-3">
+                                <i class="fa fa-folder fa-2x"></i>
+                                <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>DẠNG SẢN PHẨM</div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <a href="{{ route('information.admin.port') }}" class="d-block text-default text-center ripple-dark rounded p-3">
+                                <i class="fa fa-address-book fa-2x"></i>
+                                <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>Cảng biển</div>
+                            </a>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+
+        </ul>
+    </div>
+    @endif
+    @endif
+    {{-- seting asccest --}}
 
     <div class="collapse navbar-collapse" id="navbar-mobile">
         <ul class="navbar-nav ml-md-auto">
@@ -71,45 +133,34 @@
                             </a>
                         </div>
                         @endif
-                        {{-- <div class="col-6 col-sm-4">
-                            <a href="{{ route('widget.admin.list') }}" class="d-block text-default text-center ripple-dark rounded p-3">
-                                <i class="fas fa-th-list fa-2x"></i>
-                                <div class="font-size-sm font-weight-semibold text-uppercase mt-2">QUẢN LÝ<br>WIDGET</div>
-                            </a>
-                        </div> --}}
                     </div>
-                    @endif
+
                 </div>
-            <li class="nav-item dropdown notifications-menu">
-                <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
-                    <span class="badge badge-danger" id="num_notification"></span>
-                    <i class="icon-bell2"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350" id="notification_load"></div>
             </li>
+            @endif
             @if (session('admin-locale'))
-            <li class="nav-item dropdown dropdown-user">
+            {{-- <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle legitRipple" data-toggle="dropdown" aria-expanded="false">
                     @if (session('admin-locale') == 'vi')
                     <img src="{{ asset('assets/admin/images/vn.svg') }}" width="16" alt="Tiếng Việt">
-                    <span class="ml-1">Tiếng Việt</span>
-                    @endif
-                    @if (session('admin-locale') == 'en')
-                    <img src="{{ asset('assets/admin/images/en.svg') }}" width="16" alt="English">
-                    <span class="ml-1">English</span>
-                    @endif
+            <span class="ml-1">Tiếng Việt</span>
+            @endif
+            @if (session('admin-locale') == 'en')
+            <img src="{{ asset('assets/admin/images/en.svg') }}" width="16" alt="English">
+            <span class="ml-1">English</span>
+            @endif
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="{{ route('admin.locale', 'vi') }}" class="dropdown-item">
+                    <img src="{{ asset('assets/admin/images/vn.svg') }}" width="16" alt="Tiếng Việt">
+                    <span>Tiếng Việt</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="{{ route('admin.locale', 'vi') }}" class="dropdown-item">
-                        <img src="{{ asset('assets/admin/images/vn.svg') }}" width="16" alt="Tiếng Việt">
-                        <span>Tiếng Việt</span>
-                    </a>
-                    <a href="{{ route('admin.locale', 'en') }}" class="dropdown-item">
-                        <img src="{{ asset('assets/admin/images/en.svg') }}" width="16" alt="English">
-                        <span>English</span>
-                    </a>
-                </div>
-            </li>
+                <a href="{{ route('admin.locale', 'en') }}" class="dropdown-item">
+                    <img src="{{ asset('assets/admin/images/en.svg') }}" width="16" alt="English">
+                    <span>English</span>
+                </a>
+            </div>
+            </li> --}}
             @endif
             <li class="nav-item">
                 <a href="{{ route('index') }}" class="navbar-nav-link" target="_blank" data-popup="tooltip" title="Xem website">
@@ -129,5 +180,6 @@
             </li>
         </ul>
     </div>
+
 </div>
 <!-- /main navbar -->

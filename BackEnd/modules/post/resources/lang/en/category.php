@@ -7,7 +7,7 @@ return [
     'seleced' => 'Seleced',
     'add_cat' => 'ADD CATEGORY',
     'parent_cat' => 'Parent category',
-    'parent' => 'none',
+    'parent' => 'This is parent',
     'title' => 'Name',
     'slug' => 'Slug',
     'image' => 'Image',
@@ -29,6 +29,5 @@ return [
     'order' => 'Order',
     'edit_button' => "Edit",
     'delete' => 'Delete',
-    'category_setting' => 'Categories',
-    'locale' => 'Langue'
+    'category_setting' => 'Catalog management'
 ];
