@@ -1,21 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
-  URL = "https://nhatkyktts.xyz/api/";
+  URL = "http://nhatkyktts.xyz/api/";
 
-  public getCategories() {
-    return this.httpClient.get(`URL` + `categories`);
+  public listPostsOfCategories(slug: any) {
+    return this.httpClient.get(this.URL + `categories/` + slug);
   }
-  public getPost() {
-    return this.httpClient.get(`url` + `posts`);
+  public getPost(slugPost: any) {
+    return this.httpClient.get(this.URL + 'posts/' + slugPost);
   }
 
+  /**
+   * listCategory
+   */
+  public listCategory() {
+    return this.httpClient.get(this.URL + `categories`);
+  }
+
+  /**
+    * listCategory random 5
+    */
+  public listCategoryRandom(slugRandom: any) {
+    return this.httpClient.get(this.URL + `post-in-category/` + slugRandom);
+  }
 
 
 }

@@ -54,4 +54,6 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

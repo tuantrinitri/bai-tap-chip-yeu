@@ -17,20 +17,41 @@ export class ExperienceComponent implements OnInit {
   tableSizes = [3, 6, 9, 12];
 
   articles: any;
-
+  categories: any;
+  random: any;
+  URL = "http://nhatkyktts.xyz/";
 
   constructor(private apiService: ApiService, private postService: PostService, private router: Router) { }
   ngOnInit() {
     this.fetchPosts();
-    // console.log(this.router.url);  
+    this.URL;
+    this.listCategory();
+    this.listCatRandom();
+
 
   }
   fetchPosts(): void {
-    this.apiService.getCategories().subscribe((data) => {
-      console.log(data);
+    this.apiService.listPostsOfCategories('kinh-nghiem').subscribe((data) => {
       this.articles = data;
+      // console.log(this.articles.posts);
     });
   }
+
+
+  listCategory(): void {
+    this.apiService.listCategory().subscribe((data) => {
+      this.categories = data;
+      console.log(this.categories);
+    });
+  }
+
+
+  listCatRandom(): void {
+    this.apiService.listCategoryRandom('kinh-nghiem').subscribe((data) => {
+      this.random = data;
+    });
+  }
+
   onTableDataChange(event: any) {
     this.page = event;
     this.fetchPosts();
