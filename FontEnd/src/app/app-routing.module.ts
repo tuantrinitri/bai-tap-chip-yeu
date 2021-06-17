@@ -7,7 +7,7 @@ import { LocationComponent } from './location/location/location.component';
 import { FoodComponent } from './food/food/food.component';
 import { MapComponent } from './home/map/map.component';
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'location', component: LocationComponent },

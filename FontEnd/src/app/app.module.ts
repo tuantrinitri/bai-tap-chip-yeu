@@ -21,6 +21,7 @@ import { LocationComponent } from './location/location/location.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './experience/experience.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 @NgModule({
   declarations: [
@@ -42,14 +43,13 @@ import { ExperienceComponent } from './experience/experience.component';
     LocationComponent,
     ExperienceComponent,
     // ExperienceComponent,
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxPageScrollCoreModule.forRoot({ duration: 1600 })
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]

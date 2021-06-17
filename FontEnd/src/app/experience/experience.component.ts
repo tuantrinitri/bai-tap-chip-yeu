@@ -1,6 +1,7 @@
 import { PostService } from './../post.service';
 import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experience',
@@ -17,12 +18,15 @@ export class ExperienceComponent implements OnInit {
 
   articles: any;
 
-  constructor(private apiService: ApiService, private postService: PostService) { }
+
+  constructor(private apiService: ApiService, private postService: PostService, private router: Router) { }
   ngOnInit() {
     this.fetchPosts();
+    // console.log(this.router.url);  
+
   }
   fetchPosts(): void {
-    this.apiService.getNews().subscribe((data) => {
+    this.apiService.getCategories().subscribe((data) => {
       console.log(data);
       this.articles = data;
     });

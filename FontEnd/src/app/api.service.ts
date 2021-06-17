@@ -5,11 +5,17 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  API_KEY = 'd88fbe46e4704568b2922a35ef7262df';
-  constructor(private httpClient: HttpClient) { }
 
-  public getNews() {
-    return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`);
+  constructor(private httpClient: HttpClient) { }
+  URL = "https://nhatkyktts.xyz/api/";
+
+  public getCategories() {
+    return this.httpClient.get(`URL` + `categories`);
   }
+  public getPost() {
+    return this.httpClient.get(`url` + `posts`);
+  }
+
+
 
 }

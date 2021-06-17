@@ -1,13 +1,14 @@
-<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+<header id="header" class="fixed-top d-flex align-items-center" [ngClass]=" remmoveClass()==1 ? '' : 'header-transparent'">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
     <div class="logo me-auto">
-      <h1><a id="logo" href="index.html">Chip Travel ❤️</a></h1>
+      <h1><a id="logo" href="">Chip Travel ❤️</a></h1>
     </div>
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <li *ngFor="let item of menuList">
-          <a routerLink="/{{item.path}}" class="nav-link " [ngClass]="{'active' : item.path === activePath}" (click)="setActiveMenu(item.path)">
+
+          <a href="/{{item.path}}" class="nav-link " [ngClass]="{'active' : item.path === activePath}" (click)="setActiveMenu(item.path)">
             {{item.name}}</a>
         </li>
       </ul>

@@ -9,7 +9,7 @@ export class MenuComponent implements OnInit {
     {
       id: 1,
       name: "Trang chủ",
-      path: "home"
+      path: ""
     },
     {
       id: 2,
@@ -40,9 +40,17 @@ export class MenuComponent implements OnInit {
     }
   ];
   activePath = ""
-
+  flag = 1;
+  remmoveClass() {
+    if (window.location.pathname == '/experience' || window.location.pathname == '/map') {
+      return this.flag = 1;
+    } else {
+      return this.flag = 0;
+    }
+  }
   constructor() { }
   ngOnInit(): void {
+    this.remmoveClass()
   }
   // Set active menu
   setActiveMenu(path: string) {
