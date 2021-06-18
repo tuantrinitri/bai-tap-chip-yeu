@@ -33,5 +33,4 @@ export class ApiService {
     return this.httpClient.get(this.URL + `post-in-category/` + slugRandom);
   }
 
-
 }

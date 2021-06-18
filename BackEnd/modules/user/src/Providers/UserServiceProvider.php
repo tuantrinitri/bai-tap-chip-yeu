@@ -122,31 +122,24 @@ class UserServiceProvider extends ServiceProvider
                     'name'        => 'user::user.list_user',
                     'url'         => route('user.admin.list'),
                     'permissions' => ['user.admin.list'],
-                ])
-                ->registerItem([
-                    'id'          => 'mod-user-department',
-                    'priority'    => 1,
-                    'parent_id'   => 'mod-user',
-                    'name'        => 'user::department.department_management',
-                    'url'         => route('department.admin.list'),
-                    'permissions' => ['department.admin.list'],
-                ])
-                ->registerItem([
-                    'id'          => 'mod-user-role',
-                    'priority'    => 1,
-                    'parent_id'   => 'mod-user',
-                    'name'        => 'user::role.role_management',
-                    'url'         => route('role.admin.list'),
-                    'permissions' => ['role.admin.list'],
-                ])
-                ->registerItem([
-                    'id'          => 'mod-user-permission',
-                    'priority'    => 1,
-                    'parent_id'   => 'mod-user',
-                    'name'        => 'user::permission.permission_management',
-                    'url'         => route('permission.admin.list'),
-                    'permissions' => ['permission.admin.list'],
                 ]);
+
+            // ->registerItem([
+            //     'id'          => 'mod-user-role',
+            //     'priority'    => 1,
+            //     'parent_id'   => 'mod-user',
+            //     'name'        => 'user::role.role_management',
+            //     'url'         => route('role.admin.list'),
+            //     'permissions' => ['role.admin.list'],
+            // ])
+            // ->registerItem([
+            //     'id'          => 'mod-user-permission',
+            //     'priority'    => 1,
+            //     'parent_id'   => 'mod-user',
+            //     'name'        => 'user::permission.permission_management',
+            //     'url'         => route('permission.admin.list'),
+            //     'permissions' => ['permission.admin.list'],
+            // ]);
         });
     }
 }

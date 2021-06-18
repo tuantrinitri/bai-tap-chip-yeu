@@ -1,3 +1,4 @@
+import { PostComponent } from './post/post.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'location', component: LocationComponent },
   { path: 'food', component: FoodComponent },
   { path: 'map', component: MapComponent },
+  { path: 'post/:slugPost', component: PostComponent },
+
 
 ];
 

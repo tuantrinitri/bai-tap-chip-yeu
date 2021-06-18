@@ -158,13 +158,13 @@
         array (
           'include' => 
           array (
-            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up',
+            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd',
           ),
           'exclude' => 
           array (
-            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/.git',
-            1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/vendor',
-            2 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/node_modules',
+            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/.git',
+            1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/vendor',
+            2 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/node_modules',
           ),
           'follow_links' => false,
         ),
@@ -182,7 +182,7 @@
           0 => 'local',
         ),
       ),
-      'temporary_directory' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/app/backup-temp',
+      'temporary_directory' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/app/backup-temp',
     ),
     'notifications' => 
     array (
@@ -310,7 +310,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/cache/data',
+        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -602,19 +602,19 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/app',
+        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/app',
       ),
       'upload' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/public/upload',
+        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/public/upload',
         'url' => '/upload',
         'visibility' => 'public',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/app/public',
+        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/app/public',
         'url' => '/storage',
         'visibility' => 'private',
       ),
@@ -634,7 +634,7 @@
     'enabled' => true,
     'psr2' => 
     array (
-      'standard' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/config/../phpcs.xml',
+      'standard' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/config/../phpcs.xml',
       'ignored' => 
       array (
         0 => '*/database/*',
@@ -824,13 +824,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/logs/laravel.log',
+        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/logs/laravel.log',
+        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -894,7 +894,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/resources/views/vendor/mail',
+        0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/resources/views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -1056,9 +1056,9 @@
     ),
     'generator' => 
     array (
-      'basePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/app',
+      'basePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/app',
       'rootNamespace' => 'App\\',
-      'stubsOverridePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/app',
+      'stubsOverridePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/app',
       'paths' => 
       array (
         'models' => 'Entities',
@@ -1178,7 +1178,7 @@
     'lifetime' => '120',
     'expire_on_close' => true,
     'encrypt' => false,
-    'files' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/sessions',
+    'files' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1223,7 +1223,7 @@
     array (
       0 => 'tracker',
     ),
-    'geoip_database_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/config/geoip',
+    'geoip_database_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/config/geoip',
     'log_sql_queries_bindings' => false,
     'log_events' => false,
     'log_only_events' => 
@@ -1328,9 +1328,9 @@
   array (
     'paths' => 
     array (
-      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/resources/views',
+      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/resources/views',
     ),
-    'compiled' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/views',
+    'compiled' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/views',
   ),
   'widget' => 
   array (
@@ -1518,7 +1518,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/storage/framework/laravel-excel',
+      'local_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -1598,8 +1598,8 @@
     'route' => NULL,
     'paths' => 
     array (
-      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/public/upload',
-      1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/Back-up/public/images',
+      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/public/upload',
+      1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/public/images',
     ),
     'templates' => 
     array (
@@ -1637,6 +1637,15 @@
       'name' => 'client',
       'title' => 'Quản lý thông tin lô hàng',
       'description' => 'Quản lý thông tin, xuất, nhập lô hàng',
+    ),
+  ),
+  'post::permissions' => 
+  array (
+    0 => 
+    array (
+      'name' => 'post.admin.index',
+      'title' => 'Quản lý bài viết',
+      'description' => 'Quản lý tât cả các thao tác với module bài viết',
     ),
   ),
   'user::layouts' => 

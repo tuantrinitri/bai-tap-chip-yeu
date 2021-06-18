@@ -22,6 +22,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './experience/experience.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
     FoodComponent,
     LocationComponent,
     ExperienceComponent,
+    PostComponent,
     // ExperienceComponent,
   ],
   imports: [

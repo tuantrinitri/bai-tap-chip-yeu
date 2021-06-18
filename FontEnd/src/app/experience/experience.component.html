@@ -10,7 +10,7 @@
                 totalItems: count
               };">
             <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="{{ article.slug }}">{{ article.title }}</a></h2>
+              <h2 class="post-title1"><a [routerLinkActive]="['/post/', article.slug]">{{ article.title }}</a></h2>
               <div class="post-thumbnail"><a href="{{ article.slug }}"><img src="{{ URL +  article.image }}" alt="Blog-post Thumbnail" /></a></div>
               <div class="post-meta1">By&nbsp;<a href="#">{{ article.author }}</a>|
                 {{ article.created_at }}
