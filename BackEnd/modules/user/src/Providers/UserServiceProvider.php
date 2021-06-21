@@ -6,7 +6,7 @@ use Event;
 use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
-use Modules\User\Repositories\Eloquents\DepartmentRepository;
+
 use Modules\User\Repositories\Eloquents\PermissionRepository;
 use Modules\User\Repositories\Eloquents\RoleRepository;
 use Modules\User\Repositories\Eloquents\UserInfoRepository;
@@ -28,7 +28,6 @@ class UserServiceProvider extends ServiceProvider
         $this->app->bind(UserSocialInterface::class, UserSocialRepository::class);
         $this->app->bind(RoleInterface::class, RoleRepository::class);
         $this->app->bind(PermissionInterface::class, PermissionRepository::class);
-        $this->app->bind(DepartmentInterface::class, DepartmentRepository::class);
     }
 
     public function boot()

@@ -110,22 +110,6 @@ class ContactServiceProvider extends ServiceProvider
                     'name'        => 'contact::admin.list_contact',
                     'url'         => route('contact.admin.list'),
                     'permissions' => ['contact.admin.list'],
-                ])
-                ->registerItem([
-                    'id'          => 'mod-contact-config',
-                    'priority'    => 2,
-                    'parent_id'   => 'mod-contact',
-                    'name'        => 'contact::admin.contact_config',
-                    'url'         => route('contact.admin.config'),
-                    'permissions' => ['contact.admin.config'],
-                ])
-                ->registerItem([
-                    'id'          => 'mod-contact-topic',
-                    'priority'    => 3,
-                    'parent_id'   => 'mod-contact',
-                    'name'        => 'contact::admin.topic',
-                    'url'         => route('contact.topic.admin.list'),
-                    'permissions' => ['contact.topic.admin.list'],
                 ]);
         });
     }

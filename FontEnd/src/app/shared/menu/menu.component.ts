@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
+  /**
+   * danh sach menu duoc hien thi ngoai view  */
   menuList = [
     {
       id: 1,
@@ -18,7 +20,7 @@ export class MenuComponent implements OnInit {
     },
     {
       id: 3,
-      name: "Ẩm thựcs",
+      name: "Ẩm thực",
       icon: "icon-angle",
       path: "food"
     },
@@ -41,8 +43,14 @@ export class MenuComponent implements OnInit {
   ];
   activePath = ""
   flag = 1;
+  /**
+   * @returns them class mau den cho menu
+   */
   remmoveClass() {
-    if (window.location.pathname == '/experience' || window.location.pathname == '/map') {
+    if (window.location.pathname == '/experience'
+      || window.location.pathname == '/map'
+      || window.location.pathname == '/contact'
+      || window.location.pathname == '/food') {
       return this.flag = 1;
     } else {
       return this.flag = 0;
@@ -51,11 +59,12 @@ export class MenuComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
     this.remmoveClass()
+
   }
   // Set active menu
   setActiveMenu(path: string) {
-
     this.activePath = path;
+
   }
 
 }

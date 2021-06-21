@@ -28,11 +28,7 @@ class UserController extends BaseController
     /**
      * @var RoleInterface
      */
-    protected $roleRepository;
-    /**
-     * @var DepartmentInterface
-     */
-    protected $departmentRepository;
+
 
     /**
      * UserController Constructor
@@ -40,18 +36,16 @@ class UserController extends BaseController
      * @param UserInterface $userRepository
      * @param UserInfoInterface $userInfoRepository
      * @param RoleInterface $roleRepository
-     * @param DepartmentInterface $departmentRepository
+     * 
      */
     function __construct(
         UserInterface $userRepository,
         UserInfoInterface $userInfoRepository,
-        RoleInterface $roleRepository,
-        DepartmentInterface $departmentRepository
+        RoleInterface $roleRepository
     ) {
         $this->userRepository = $userRepository;
         $this->userInfoRepository = $userInfoRepository;
         $this->roleRepository = $roleRepository;
-        $this->departmentRepository = $departmentRepository;
     }
 
     /**
@@ -70,9 +64,9 @@ class UserController extends BaseController
         page_title()->setTitle(trans('user::user.create_user'));
         $roles = $this->roleRepository->allNotSuperadmin();
         $rolesWithPermissions = $this->roleRepository->allNotSuperadmin(true);
-        $departments = $this->departmentRepository->orderBy('name', 'asc')->all();
 
-        return view('user::admin.user.add', compact('roles', 'rolesWithPermissions', 'departments'));
+
+        return view('user::admin.user.add', compact('roles', 'rolesWithPermissions'));
     }
 
     /**
@@ -184,7 +178,7 @@ class UserController extends BaseController
                 }
             }
             $data['listRoleWithPermissions'] = json_encode($listRoleWithPermissions);
-            $data['listDepartment'] = $this->departmentRepository->orderBy('name', 'asc')->all();
+
             return view('user::admin.user.edit', $data);
         }
 

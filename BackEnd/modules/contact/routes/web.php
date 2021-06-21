@@ -80,11 +80,12 @@ Route::group(['namespace' => '\Modules\Contact\Http\Controllers', 'middleware' =
     });
 });
 
-Route::get('/test-sendmail', [
-    'as' => 'contact.test_sendmail',
-    'uses' => '\Modules\Contact\Http\Controllers\WebController@getTestSendmail'
-]);
-Route::post('/test-sendmail', [
-    'as' => 'post.contact.test_sendmail',
-    'uses' => '\Modules\Contact\Http\Controllers\WebController@postTestSendmail'
-]);
+/**
+ * ROUTES FOR API: Contact
+ * 
+ */
+Route::group(['namespace' => '\Modules\Contact\Http\Controllers'], function () {
+    Route::post('api/contact', [
+        'uses' => 'ApiController@postSendmail'
+    ]);
+});

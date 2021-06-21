@@ -1,24 +1,30 @@
- <main id="main">
-   <!-- Bat dau diem den tai đây là danh mục các bài viết-->
-   <h1 class="signup-heading" style="font-family:'Itim', cursive;;"> Liên Hệ</h1>
-   <div class="signup">
-     <div class="signup-social">
-       <i class="fa fa-facebook signup-social-icon"></i>
-       <span class="signup-social-text">Chip Travel</span>
-     </div>
-     <div class="signup-social">
-       <i class="fa fa-phone signup-social-icon"></i>
-       <span class="signup-social-text">+8471 773 444</span>
-     </div>
-     <div class="signup-social">
-       <i class="fa fa-envelope-o signup-social-icon"></i>
-       <span class="signup-social-text">huyennchipp@gmail.com</span>
-     </div>
-     <div class="signup-or"><span> Or </span></div>
-     <input type="text" class="field" placeholder="Họ và tên">
-     <input type="text" class="field" placeholder="Email">
-     <input type="text" class="field" placeholder="Số điện thoại">
-     <textarea placeholder="Message" class="field"></textarea>
-     <button class="btn1">Gửi</button>
-   </div>
- </main>
+<div class="contact-2">
+  <!-- Bat dau diem den tai đây là danh mục các bài viết-->
+
+  <h1 class="signup-heading" style="font-family:'Itim', cursive;;"> Liên Hệ</h1>
+  <div class="map">
+    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124928.54510790479!2d108.38051074698596!3d11.903902167073394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112fef20988b1%3A0xad5f228b672bf930!2zVHAuIMSQw6AgTOG6oXQsIEzDom0gxJDhu5NuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1620815110510!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="signup">
+    <div class="signup-social">
+      <i class="fa fa-facebook signup-social-icon"></i>
+      <span class="signup-social-text">Chip Travel</span>
+    </div>
+    <div class="signup-social">
+      <i class="fa fa-phone signup-social-icon"></i>
+      <span class="signup-social-text">+8471 773 444</span>
+    </div>
+    <div class="signup-social">
+      <i class="fa fa-envelope-o signup-social-icon"></i>
+      <span class="signup-social-text">huyennchipp@gmail.com</span>
+    </div>
+    <div class="signup-or"><span> Or </span></div>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <input type="text" formControlName="sender_name" class="field" placeholder="Họ và tên">
+      <input type="text" formControlName="sender_email" class="field" placeholder="Email">
+      <input type="text" formControlName="sender_phone" class="field" placeholder="Số điện thoại">
+      <textarea formControlName="sender_content" class="field" placeholder="Lời nhắn gửi"></textarea>
+      <button class="btn1">Gửi</button>
+    </form>
+  </div>
+</div>

@@ -4,13 +4,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8">
-          <div class="post" *ngFor="let article of articles.posts| paginate : {
+          <div class="post" *ngFor="let article of articles | paginate : {
                 itemsPerPage: tableSize,
                 currentPage: page,
                 totalItems: count
               };">
             <div class="post-header font-alt">
-              <h2 class="post-title1"><a [routerLinkActive]="['/post/', article.slug]">{{ article.title }}</a></h2>
+              <h2 class="post-title1"><a [routerLink]="['/post/', article.slug]">{{ article.title }}</a></h2>
               <div class="post-thumbnail"><a href="{{ article.slug }}"><img src="{{ URL +  article.image }}" alt="Blog-post Thumbnail" /></a></div>
               <div class="post-meta1">By&nbsp;<a href="#">{{ article.author }}</a>|
                 {{ article.created_at }}
@@ -30,23 +30,23 @@
         <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
           <div class="widget">
-            <h5 class="widget-title font-alt">Blog Categories</h5>
-            <ul class="icon-list" *ngFor="let item of categories.categories">
-              <li><a href="#">{{ item.title }}</a></li>
-
+            <h5 class="widget-title font-alt">Danh mục bài viết</h5>
+            <ul class="icon-list">
+              <li><a routerLink="/location">Điêm đến</a></li>
+              <li><a routerLink="/food">Ẩm thực</a></li>
+              <li><a routerLink="/experience">Kinh nghiệm</a></li>
             </ul>
           </div>
           <div class="widget">
             <h5 class="widget-title font-alt">Bài viết cùng chuyên mục</h5>
             <ul class="widget-posts" *ngFor="let itemRandom of random">
               <li class="clearfix">
-                <div class="widget-posts-image"><a href="{{ itemRandom.slug }}"><img src="{{ URL +  itemRandom.image }}" alt="Post Thumbnail" /></a></div>
+                <div class="widget-posts-image"><a [routerLink]="['/post/', itemRandom.slug]"><img src="{{ URL +  itemRandom.image }}" alt="Post Thumbnail" /></a></div>
                 <div class="widget-posts-body">
-                  <div class="widget-posts-title"><a href="#">{{ itemRandom.title }}</a></div>
+                  <div class="widget-posts-title"><a [routerLink]="['/post/', itemRandom.slug]">{{ itemRandom.title }}</a></div>
                   <div class="widget-posts-meta">{{ itemRandom.created_at }}</div>
                 </div>
               </li>
-
             </ul>
           </div>
 

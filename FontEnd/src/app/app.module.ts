@@ -16,13 +16,14 @@ import { GalleryComponent } from './home/gallery/gallery.component';
 import { TestimonialComponent } from './home/testimonial/testimonial.component';
 import { MapComponent } from './home/map/map.component';
 import { ContactComponent } from './contact/contact/contact.component';
-import { FoodComponent } from './food/food/food.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LocationComponent } from './location/location/location.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './experience/experience.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { PostComponent } from './post/post.component';
+import { FoodComponent } from './food/food.component';
 
 @NgModule({
   declarations: [
@@ -40,10 +41,10 @@ import { PostComponent } from './post/post.component';
     TestimonialComponent,
     MapComponent,
     ContactComponent,
-    FoodComponent,
     LocationComponent,
     ExperienceComponent,
     PostComponent,
+    FoodComponent,
     // ExperienceComponent,
   ],
   imports: [
@@ -51,6 +52,7 @@ import { PostComponent } from './post/post.component';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
     NgxPageScrollCoreModule.forRoot({ duration: 1600 })
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],

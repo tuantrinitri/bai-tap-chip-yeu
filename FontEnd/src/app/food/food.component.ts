@@ -1,14 +1,15 @@
-import { PostService } from './../post.service';
+import { Router } from '@angular/router';
 import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-experience',
-  templateUrl: './experience.component.html'
+  selector: 'app-food',
+  templateUrl: './food.component.html'
 })
-export class ExperienceComponent implements OnInit {
-
+export class FoodComponent implements OnInit {
+  /**
+   * Khai bao bien
+   */
   POSTS: any;
   page = 1;
   count = 0;
@@ -19,26 +20,31 @@ export class ExperienceComponent implements OnInit {
   categories: any;
   random: any;
   URL = "http://nhatkyktts.xyz/";
-
+  /**
+   * Khoi tao contructor co ban
+   */
   constructor(private apiService: ApiService, private router: Router) { }
   ngOnInit() {
     this.fetchPosts();
     this.URL;
     this.listCategory();
     this.listCatRandom();
-
-
   }
 
   posts: any;
+  /**
+   * Ham lay tat ca cac bai viet thuoc danh muc am thuc
+   */
   fetchPosts(): void {
-    this.apiService.listPostsOfCategories('kinh-nghiem').subscribe((data: any) => {
+    this.apiService.listPostsOfCategories('am-thuc').subscribe((data: any) => {
       this.articles = data['posts'];
       // console.log(data);
     });
   }
 
-
+  /**
+   * lay ra tat ca danh sach danh muc
+   */
   listCategory(): void {
     this.apiService.listCategory().subscribe((data: any) => {
       this.categories = data['categories'];
@@ -46,18 +52,26 @@ export class ExperienceComponent implements OnInit {
     });
   }
 
-
+  /**
+   * Lay nhung bai viet cung danh muc am thuc
+   */
   listCatRandom(): void {
-    this.apiService.listCategoryRandom('kinh-nghiem').subscribe((data) => {
+    this.apiService.listCategoryRandom('am-thuc').subscribe((data) => {
       this.random = data;
     });
   }
-
+  /**
+   * 
+   * @param event Ham phan trang
+   */
   onTableDataChange(event: any) {
     this.page = event;
     this.fetchPosts();
   }
-
+  /**
+   *
+   * @param event Ham phan trang
+   */
   onTableSizeChange(event: any): void {
     this.tableSize = event.target.value;
     this.page = 1;

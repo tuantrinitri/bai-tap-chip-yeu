@@ -93,6 +93,10 @@
     justify-content: center;
     align-items: center;
     padding: 20px 200px;
+    padding-top: 80px;
+    }
+    .contact-2{
+padding-top: 80px;
     }
     .contact-box{
     max-width: 1000px;

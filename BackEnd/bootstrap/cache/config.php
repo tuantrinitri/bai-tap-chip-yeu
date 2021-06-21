@@ -1639,6 +1639,75 @@
       'description' => 'Quản lý thông tin, xuất, nhập lô hàng',
     ),
   ),
+  'contact::permissions' => 
+  array (
+    0 => 
+    array (
+      'name' => 'contact.admin.list',
+      'title' => 'contact::common.list_contact',
+      'description' => 'contact::common.list_contact_description',
+    ),
+    1 => 
+    array (
+      'name' => 'contact.admin.view',
+      'title' => 'contact::common.view_contact',
+      'description' => 'contact::common.view_contact_description',
+    ),
+    2 => 
+    array (
+      'name' => 'contact.admin.edit',
+      'title' => 'contact::common.edit_contact',
+      'description' => 'contact::common.edit_contact_description',
+    ),
+    3 => 
+    array (
+      'name' => 'contact.admin.bulkaction',
+      'title' => 'contact::common.delete_contact',
+      'description' => 'contact::common.delete_contact_description',
+    ),
+    4 => 
+    array (
+      'name' => 'contact.admin.config',
+      'title' => 'contact::common.view_config',
+      'description' => 'contact::common.view_config_description',
+    ),
+    5 => 
+    array (
+      'name' => 'contact.topic.admin.list',
+      'title' => 'contact::common.list_topic',
+      'description' => 'contact::common.list_topic_description',
+    ),
+    6 => 
+    array (
+      'name' => 'contact.topic.admin.create',
+      'title' => 'contact::common.create_topic',
+      'description' => 'contact::common.create_topic_description',
+    ),
+    7 => 
+    array (
+      'name' => 'contact.topic.admin.edit',
+      'title' => 'contact::common.edit_topic',
+      'description' => 'contact::common.edit_topic_description',
+    ),
+    8 => 
+    array (
+      'name' => 'contact.topic.admin.delete',
+      'title' => 'contact::common.delete_topic',
+      'description' => 'contact::common.delete_topic_description',
+    ),
+    9 => 
+    array (
+      'name' => 'contact.ajax.changeStatusTopic',
+      'title' => 'contact::common.change_status_topic',
+      'description' => 'contact::common.change_status_topic_description',
+    ),
+    10 => 
+    array (
+      'name' => 'contact.ajax.changeStatusTopicAutoSendMail',
+      'title' => 'contact::common.change_status_auto_sendmail_topic',
+      'description' => 'contact::common.change_status_auto_sendmail_topic_description',
+    ),
+  ),
   'post::permissions' => 
   array (
     0 => 

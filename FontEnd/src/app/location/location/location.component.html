@@ -31,92 +31,32 @@
   <section class="module">
     <div class="container">
       <div class="row multi-columns-row post-columns">
-        <div class="col-sm-6 col-md-4 col-lg-4">
+
+        <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let article of articles | paginate : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              };">
           <div class="post">
-            <div class="post-thumbnail"><a href="baiviet.html"><img src="assets/img/2.jpg" alt="Blog-post Thumbnail" /></a></div>
+            <div class="post-thumbnail"><a [routerLink]="['/post/', article.slug]"><img src="{{ URL +  article.image }}" alt="Blog-post Thumbnail" /></a></div>
             <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="baiviet.html">CÓ MỘT ĐÀ LẠT MÙA ĐÔNG ĐẸP MỘNG MƠ VÀ ĐẦY CẢM XÚC</a></h2>
-              <div class="post-meta1">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November
+              <h2 class="post-title1"><a [routerLink]="['/post/', article.slug]">{{ article.title }}</a></h2>
+              <div class="post-meta1">By&nbsp;<a href="#">{{ article.author }}</a>|
+                {{ article.created_at }}
               </div>
             </div>
             <div class="post-entry">
-              <p>Đà Lạt luôn là nơi mà người ta muốn tìm về khi lòng bộn bề và vướng bận những trắc trở, là chốn dừng chân của những lãng khách muốn nghỉ ngơi và tìm đến với những bình yên của cuộc sống.</p>
+              <p>{{ article.description }}</p>
             </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
+            <div class="post-more"><a class="more-link" [routerLink]="['/post/', article.slug]">Xem thêm</a></div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail"><a href="#"><img src="assets/img/3.jpg" alt="Blog-post Thumbnail" /></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="#">Shore after the tide</a></h2>
-              <div class="post-meta1">By&nbsp;<a href="#">Andy River</a>&nbsp;| 11 November
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail"><a href="#"><img src="assets/img/4.jpg" alt="Blog-post Thumbnail" /></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="#">We in New Zealand</a></h2>
-              <div class="post-meta1">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail"><a href="#"><img src="assets/img/5.jpg" alt="Blog-post Thumbnail" /></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="#">Plane in the field</a></h2>
-              <div class="post-meta1">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail"><a href="#"><img src="assets/img/6.jpg" alt="Blog-post Thumbnail" /></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="#">Clock</a></h2>
-              <div class="post-meta1">By&nbsp;<a href="#">Andy River</a>&nbsp;| 11 November
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail"><a href="#"><img src="assets/img/7.jpg" alt="Blog-post Thumbnail" /></a></div>
-            <div class="post-header font-alt">
-              <h2 class="post-title1"><a href="#">Lighthouse to the shore</a></h2>
-              <div class="post-meta1">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-          </div>
-        </div>
+
       </div>
-      <div class="pagination font-alt"><a href="#"><i class="fa fa-angle-left"></i></a><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#"><i class="fa fa-angle-right"></i></a></div>
+      <div class="pagination font-alt">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+      </div>
     </div>
   </section>
   <!-- Kết thúc-->

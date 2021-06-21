@@ -8,15 +8,6 @@ use Modules\Post\Models\Post;
 
 class ApiController extends BaseController
 {
-      // public function categories()
-      // {
-      //       try {
-      //             return Category::get();
-      //       } catch (Exception $e) {
-      //             return response()->json(['status' => 500, 'message' => 'Đã xảy ra lỗi'], 500);
-      //       }
-      // }
-
       public function post($slugPost)
       {
             try {
@@ -24,7 +15,7 @@ class ApiController extends BaseController
                   return response()->json([
                         'status' => 200,
                         'message' => 'Lấy dữ liệu danh muc thanh cong',
-                        'message' => $post
+                        'post' => $post
                   ], 200);
             } catch (Exception $e) {
                   return response()->json(['status' => 500, 'message' => 'Đã xảy ra lỗi'], 500);
