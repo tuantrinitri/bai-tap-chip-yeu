@@ -1632,80 +1632,14 @@
       'title' => 'Quản lý admin',
       'description' => 'Quản lý admin',
     ),
-    1 => 
-    array (
-      'name' => 'client',
-      'title' => 'Quản lý thông tin lô hàng',
-      'description' => 'Quản lý thông tin, xuất, nhập lô hàng',
-    ),
   ),
   'contact::permissions' => 
   array (
     0 => 
     array (
       'name' => 'contact.admin.list',
-      'title' => 'contact::common.list_contact',
-      'description' => 'contact::common.list_contact_description',
-    ),
-    1 => 
-    array (
-      'name' => 'contact.admin.view',
-      'title' => 'contact::common.view_contact',
-      'description' => 'contact::common.view_contact_description',
-    ),
-    2 => 
-    array (
-      'name' => 'contact.admin.edit',
-      'title' => 'contact::common.edit_contact',
-      'description' => 'contact::common.edit_contact_description',
-    ),
-    3 => 
-    array (
-      'name' => 'contact.admin.bulkaction',
-      'title' => 'contact::common.delete_contact',
-      'description' => 'contact::common.delete_contact_description',
-    ),
-    4 => 
-    array (
-      'name' => 'contact.admin.config',
-      'title' => 'contact::common.view_config',
-      'description' => 'contact::common.view_config_description',
-    ),
-    5 => 
-    array (
-      'name' => 'contact.topic.admin.list',
-      'title' => 'contact::common.list_topic',
-      'description' => 'contact::common.list_topic_description',
-    ),
-    6 => 
-    array (
-      'name' => 'contact.topic.admin.create',
-      'title' => 'contact::common.create_topic',
-      'description' => 'contact::common.create_topic_description',
-    ),
-    7 => 
-    array (
-      'name' => 'contact.topic.admin.edit',
-      'title' => 'contact::common.edit_topic',
-      'description' => 'contact::common.edit_topic_description',
-    ),
-    8 => 
-    array (
-      'name' => 'contact.topic.admin.delete',
-      'title' => 'contact::common.delete_topic',
-      'description' => 'contact::common.delete_topic_description',
-    ),
-    9 => 
-    array (
-      'name' => 'contact.ajax.changeStatusTopic',
-      'title' => 'contact::common.change_status_topic',
-      'description' => 'contact::common.change_status_topic_description',
-    ),
-    10 => 
-    array (
-      'name' => 'contact.ajax.changeStatusTopicAutoSendMail',
-      'title' => 'contact::common.change_status_auto_sendmail_topic',
-      'description' => 'contact::common.change_status_auto_sendmail_topic_description',
+      'title' => 'Quản lý liên hệ',
+      'description' => 'Quản lý liên hệ',
     ),
   ),
   'post::permissions' => 
@@ -1777,30 +1711,6 @@
       'name' => 'user.admin.delete',
       'title' => 'Xóa tài khoản',
       'description' => 'Cho phép xóa tài khoản',
-    ),
-    4 => 
-    array (
-      'name' => 'department.admin.list',
-      'title' => 'Danh sách phòng ban',
-      'description' => 'Cho phép xem danh sách phòng ban',
-    ),
-    5 => 
-    array (
-      'name' => 'department.admin.add',
-      'title' => 'Thêm phòng ban',
-      'description' => 'Cho phép thêm phòng ban',
-    ),
-    6 => 
-    array (
-      'name' => 'department.admin.edit',
-      'title' => 'Sửa phòng ban',
-      'description' => 'Cho phép sửa phòng ban',
-    ),
-    7 => 
-    array (
-      'name' => 'department.admin.delete',
-      'title' => 'Xóa phòng ban',
-      'description' => 'Cho phép xóa phòng ban',
     ),
   ),
   'user::widget' => 

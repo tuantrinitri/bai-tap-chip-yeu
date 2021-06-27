@@ -37,7 +37,7 @@
                 data-target="#filter-form"><i class="fas fa-filter"></i></a>
         </div>
         {{-- fitter --}}
-        <div class="card-body bg-light p-2 collapse show" id="filter-form"
+        {{-- <div class="card-body bg-light p-2 collapse show" id="filter-form"
             style="border-top: 1px solid rgb(221, 221, 221);">
             <form method="GET" action="{{ route('contact.admin.list') }}">
                 <div class="row">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div> --}}
         {{-- end fitter --}}
         <form class="delete" action="{{ route('contact.admin.bulkaction') }}" method="post">
             {{ csrf_field() }}

@@ -29,12 +29,12 @@ class UserTable extends DataTable
                         'link' => route('user.admin.edit', $item->id)
                     ];
                 }
-                // if (user_check_permission('user.admin.delete')) {
-                //     $actions['delete'] = [
-                //         'status' => true,
-                //         'link' => route('user.admin.delete', $item->id)
-                //     ];
-                // }
+                if (user_check_permission('user.admin.delete')) {
+                    $actions['delete'] = [
+                        'status' => true,
+                        'link' => route('user.admin.delete', $item->id)
+                    ];
+                }
                 return view('core::table.action', compact('actions', 'table_id'))->render();
             })
             ->addColumn('role', function (User $user) {
@@ -99,8 +99,7 @@ class UserTable extends DataTable
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
-                ->width(60)
-                ->addClass('text-center with-tb')
+                ->addClass('text-center')
                 ->title('Thao tác'),
         ];
     }
