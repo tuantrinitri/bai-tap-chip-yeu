@@ -158,13 +158,13 @@
         array (
           'include' => 
           array (
-            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd',
+            0 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd',
           ),
           'exclude' => 
           array (
-            0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/.git',
-            1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/vendor',
-            2 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/node_modules',
+            0 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\.git',
+            1 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\vendor',
+            2 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\node_modules',
           ),
           'follow_links' => false,
         ),
@@ -182,7 +182,7 @@
           0 => 'local',
         ),
       ),
-      'temporary_directory' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/app/backup-temp',
+      'temporary_directory' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\app/backup-temp',
     ),
     'notifications' => 
     array (
@@ -310,7 +310,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/cache/data',
+        'path' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -422,7 +422,7 @@
         'port' => '3306',
         'database' => 'chip-yeu',
         'username' => 'root',
-        'password' => 'mysql',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -446,7 +446,7 @@
         'port' => '3306',
         'database' => 'chip-yeu',
         'username' => 'root',
-        'password' => 'mysql',
+        'password' => '',
         'strict' => false,
       ),
       'pgsql' => 
@@ -457,7 +457,7 @@
         'port' => '3306',
         'database' => 'chip-yeu',
         'username' => 'root',
-        'password' => 'mysql',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -472,7 +472,7 @@
         'port' => '3306',
         'database' => 'chip-yeu',
         'username' => 'root',
-        'password' => 'mysql',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -602,19 +602,19 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/app',
+        'root' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\app',
       ),
       'upload' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/public/upload',
+        'root' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\public\\upload',
         'url' => '/upload',
         'visibility' => 'public',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/app/public',
+        'root' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\app/public',
         'url' => '/storage',
         'visibility' => 'private',
       ),
@@ -634,7 +634,7 @@
     'enabled' => true,
     'psr2' => 
     array (
-      'standard' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/config/../phpcs.xml',
+      'standard' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\config/../phpcs.xml',
       'ignored' => 
       array (
         0 => '*/database/*',
@@ -824,13 +824,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/logs/laravel.log',
+        'path' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/logs/laravel.log',
+        'path' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -894,7 +894,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/resources/views/vendor/mail',
+        0 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -1056,9 +1056,9 @@
     ),
     'generator' => 
     array (
-      'basePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/app',
+      'basePath' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\app',
       'rootNamespace' => 'App\\',
-      'stubsOverridePath' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/app',
+      'stubsOverridePath' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\app',
       'paths' => 
       array (
         'models' => 'Entities',
@@ -1178,7 +1178,7 @@
     'lifetime' => '120',
     'expire_on_close' => true,
     'encrypt' => false,
-    'files' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/sessions',
+    'files' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1223,7 +1223,7 @@
     array (
       0 => 'tracker',
     ),
-    'geoip_database_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/config/geoip',
+    'geoip_database_path' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\config/geoip',
     'log_sql_queries_bindings' => false,
     'log_events' => false,
     'log_only_events' => 
@@ -1328,9 +1328,9 @@
   array (
     'paths' => 
     array (
-      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/resources/views',
+      0 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\resources\\views',
     ),
-    'compiled' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/views',
+    'compiled' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\framework\\views',
   ),
   'widget' => 
   array (
@@ -1518,7 +1518,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/storage/framework/laravel-excel',
+      'local_path' => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\storage\\framework/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -1598,8 +1598,8 @@
     'route' => NULL,
     'paths' => 
     array (
-      0 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/public/upload',
-      1 => '/usr/local/ampps/www/Bai-Tap-Chip/bai-tap-chip-yeu/BackEnd/public/images',
+      0 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\public\\upload',
+      1 => 'C:\\Tốt nghiệp\\New folder\\bai-tap-chip-yeu\\BackEnd\\public\\images',
     ),
     'templates' => 
     array (
