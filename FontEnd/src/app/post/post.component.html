@@ -8,8 +8,7 @@
        <div class="carousel-inner" role="listbox">
 
          <!-- Slide 1 -->
-         <div class="carousel-item active" style="background-image:
-             url(assets/img/bi.jpg);">
+         <div class="carousel-item active" [ngStyle]="{'background-image': 'url(' + post.image + ')'}">
            <div class="carousel-container">
              <div class="carousel-content">
                <h2 class="animate__animated animate__fadeInDown" style="font-family: 'Dancing Script', cursive;"> {{ post.title }}</h2>
@@ -32,7 +31,7 @@
          <div class="row">
            <div class="col-sm-8">
              <div class="post">
-               <div class="post-thumbnail"><img src="{{ URL +  post.image }}" alt="Blog Featured Image" /></div>
+               <!-- <div class="post-thumbnail"><img src="{{  post.image }}" alt="Blog Featured Image" /></div> -->
                <div class="post-header font-alt">
                  <h1 class="post-title">{{ post.title }}</h1>
                  <div class="post-meta">By {{ post.author }}
